@@ -28,5 +28,20 @@
             </div>
          </main>
     </section>
+
+    <!-- Blog and About -->
+    <section id="img"></section>
+
+
+    <script src="assets/Json/Blog.js"></script>
+    <script>
+        let img = document.getElementById("img")
+        for(let i = 0; i<blog.length; i++){
+            img.innerHTML +=`
+            <img src="${blog[i].thumbnail}">
+            <img src="${blog[i].image}">
+            `
+        }
+    </script>
     </body>
 </html>
