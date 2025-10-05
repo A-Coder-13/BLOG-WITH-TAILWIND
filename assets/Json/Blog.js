@@ -51,7 +51,7 @@ let blog = [
     date: "2025-09-25",
     tags: ["Git", "GitHub", "Version Control"],
     image: "assets/img/Blog-5-icon.svg",
-    thumbnail: "assets/img/Blog-5-thumbnail.jpg",
+    thumbnail: "assets/img/Blog-5-thumbnail.png",
     content: "Git is a distributed version control system that allows multiple developers to work on the same codebase efficiently. GitHub offers collaboration tools like pull requests, issues, and actions..."
   },
   {

@@ -1,47 +1,144 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tailwind-Blogs</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
+
 <body>
     <!-- Nav of web pg -->
     <section>
-        <nav class="flex justify-between px-10 py-3 bg-fuchsia-900 text-fuchsia-50">
-            <div class="font-black">BLOG</div>
+        <nav class="md:flex justify-between px-10 py-3 bg-fuchsia-900 text-fuchsia-50">
+            <div class="flex justify-between">
+                <div class="font-black">DevSpace</div>
+                <div class="text-fuchsia-50 md:hidden">
+                    <button onclick="shownav()"><i class="fa-solid fa-bars"></i></button>
+                </div>
+            </div>
             <div>
-                <ul class="flex gap-3">
-                    <li><a href="">Home</a></li>
-                    <li><a href="">Blog</a></li>
-                    <li><a href="">About</a></li>
-                    <li><a href="">Contact</a></li>
+                <ul id="nav-link" class="hidden md:flex gap-3">
+                    <li class="py-2 md:p-0 hover:bg-fuchsia-500"><a href="">Home</a></li>
+                    <li class="py-2 md:p-0 hover:bg-fuchsia-500"><a href="">Blog</a></li>
+                    <li class="py-2 md:p-0 hover:bg-fuchsia-500"><a href="">About</a></li>
+                    <li class="py-2 md:p-0 hover:bg-fuchsia-500"><a href="">Contact</a></li>
                 </ul>
             </div>
         </nav>
-
-        <!-- main -->
-         <main>
-            <div>
-                
-            </div>
-         </main>
     </section>
 
-    <!-- Blog and About -->
-    <section id="img"></section>
+
+    <!-- main -->
+    <main class="md:flex gap-5 p-3 md:p-8 bg-fuchsia-50">
+        <!-- Blog Content -->
+        <div class="md:w-2/3">
+            <!-- Featured Blog -->
+            <div class="bg-fuchsia-100 shadow-lg p-5 rounded-xl">
+                <img src="assets/img/featured-blog-post.jpg" class="w-[370px] rounded-xl" alt="">
+                <h1 class="text-2xl font-medium">Featured Posts</h1>
+                <p class="md:w-[370px]">Dive into our top-picked articles — trending tutorials and insights every
+                    developer should read.</p>
+                <a href="" class="text-fuchsia-800 font-medium">Read more</a>
+            </div>
+            <!-- Blog Cards -->
+            <div id="blog" class="grid md:grid-cols-2 lg:grid-cols-3 gap-4 mt-5">
+                <!-- Cards From JSON -->
+            </div>
+        </div>
+
+        <!-- About -->
+        <div class="md:w-1/3 mt-5 md:mt-0 bg-fuchsia-100 shadow-lg p-9 h-fit">
+
+            <div>
+                <div>
+                    <h1 class="font-medium text-xl">About DevSpace</h1>
+                </div>
+                <div class="text-[11px]">
+                    <p>DevSpace is a modern web platform built to share coding knowledge, tools, and insights that
+                        empower
+                        developers to grow.</p>
+
+                    <p>From frontend frameworks to backend systems and DevOps, our goal is to simplify complex concepts
+                        and
+                        help you stay ahead in the fast-moving tech world.</p>
+                </div>
+            </div>
+
+            <div class="mt-5">
+                <h1 class="font-medium text-xl">About DevSpace</h1>
+                <ul class="">
+                    <li><a href="" class="text-fuchsia-800 hover:text-blue-700">Technology</a></li>
+                    <li><a href="" class="text-fuchsia-800 hover:text-blue-700">Design</a></li>
+                    <li><a href="" class="text-fuchsia-800 hover:text-blue-700">Freelancing</a></li>
+                    <li><a href="" class="text-fuchsia-800 hover:text-blue-700">Development</a></li>
+                </ul>
+            </div>
+
+            <div class="mt-5 pb-20">
+                <div>
+                    <h1 class="font-medium text-xl">News Letter</h1>
+                </div>
+                <div>
+                    <input type="text" class="w-full py-2 rounded-md mb-2">
+                    <button
+                        class="bg-fuchsia-900 text-white hover:bg-fuchsia-500 w-full rounded-md py-2">Subscribe</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer style="position: relative;" class="bg-slate-900 text-white text-center">
+        <p>© 2025 DevSpace. All rights reserved. | Built with Heart by developers, for developers.</p>
+    </footer>
+
+
 
 
     <script src="assets/Json/Blog.js"></script>
     <script>
-        let img = document.getElementById("img")
-        for(let i = 0; i<blog.length; i++){
-            img.innerHTML +=`
-            <img src="${blog[i].thumbnail}">
-            <img src="${blog[i].image}">
+        // Cards display
+        let blog_card = document.getElementById("blog");
+        for (let i = 0; i < blog.length; i++) {
+
+            blog_card.innerHTML += `
+            <div class="bg-fuchsia-100 shadow-lg rounded-t-xl">
+                            <div>
+                                <img src="${blog[i].thumbnail}" class="w-full h-[150px] rounded-t-xl" alt="">
+                            </div>
+                            <div class="flex p-3 text-xl text-fuchsia-800 font-medium gap-3 items-center">
+                                <div class="bg-white rounded-[50%] p-1 ring-2 ring-fuchsia-800"><img src="${blog[i].image}
+                                    " class="size-[30px] rounded[50%]" alt=""></div>
+                                <div>
+                                    <h1>${blog[i].title}</h1>
+                                </div>
+                            </div>
+                           <div class="p-3">
+                            <div>
+                                <p class="text-sm">${blog[i].summary}</p>
+                                <button class="text-fuchsia-800 font-medium py-3 hover:text-blue-700">Read more</button>
+                            </div>
+                            <div class="w-full flex justify-between text-slate-400 text-[11px]">
+                                <p>Author: ${blog[i].author}</p>
+                                <p>Posted on: ${blog[i].date}</p>
+                            </div>
+                           </div>
+                        </div>
             `
+
         }
+
+
+        // nav
+       function shownav(){
+        let nav_link = document.getElementById("nav-link")
+        nav_link.style.display="block"
+        }
+
     </script>
-    </body>
+</body>
+
 </html>
