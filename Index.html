@@ -6,7 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tailwind-Blogs</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
@@ -16,7 +18,7 @@
             <div class="flex justify-between">
                 <div class="font-black">DevSpace</div>
                 <div class="text-fuchsia-50 md:hidden">
-                    <button onclick="shownav()"><i class="fa-solid fa-bars"></i></button>
+                    <button onclick="shownav()" id="btn"><i class="fa-solid fa-bars"></i></button>
                 </div>
             </div>
             <div>
@@ -132,11 +134,27 @@
         }
 
 
-        // nav
-       function shownav(){
-        let nav_link = document.getElementById("nav-link")
-        nav_link.style.display="block"
+        // Show-Nav
+        function shownav() {
+            const navLink = document.getElementById("nav-link");
+            const btn = document.getElementById("btn");
+            const icon = btn.querySelector("i");
+
+            // Toggle the nav visibility
+            navLink.classList.toggle("hidden");
+
+            // Toggle the icon between bars and xmark
+            if (navLink.classList.contains("hidden")) {
+                icon.classList.remove("fa-xmark");
+                icon.classList.add("fa-bars");
+            } else {
+                icon.classList.remove("fa-bars");
+                icon.classList.add("fa-xmark");
+            }
         }
+
+
+
 
     </script>
 </body>
