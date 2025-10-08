@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tailwind-Blog-Page</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <!-- Nav of web pg -->
+    <section>
+        <nav class="md:flex justify-between px-10 py-3 bg-fuchsia-900 text-fuchsia-50">
+            <div class="flex justify-between">
+                <div class="font-black">DevSpace</div>
+                <div class="text-fuchsia-50 md:hidden">
+                    <button onclick="shownav()" id="btn"><i class="fa-solid fa-bars"></i></button>
+                </div>
+            </div>
+            <div>
+                <ul id="nav-link" class="hidden md:flex gap-3">
+                    <li class="py-2 md:p-0 hover:bg-fuchsia-500"><a href="">Home</a></li>
+                    <li class="py-2 md:p-0 hover:bg-fuchsia-500"><a href="">Blog</a></li>
+                    <li class="py-2 md:p-0 hover:bg-fuchsia-500"><a href="">About</a></li>
+                    <li class="py-2 md:p-0 hover:bg-fuchsia-500"><a href="">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+    </section>
+
+    <!-- Blog -->
+    <main id="main"></main>
+
+
+
+    <script>
+        // Show-Nav
+        function shownav() {
+            const navLink = document.getElementById("nav-link");
+            const btn = document.getElementById("btn");
+            const icon = btn.querySelector("i");
+
+            // Toggle the nav visibility
+            navLink.classList.toggle("hidden");
+
+            // Toggle the icon between bars and xmark
+            if (navLink.classList.contains("hidden")) {
+                icon.classList.remove("fa-xmark");
+                icon.classList.add("fa-bars");
+            } else {
+                icon.classList.remove("fa-bars");
+                icon.classList.add("fa-xmark");
+            }
+        }
+
+
+        let main = document.getElementById("main")
+        main.innerHTML = `
+        <section>
+            <div>
+                <img src="assets/img/Blog-1-thumbnail.jpg" class="w-full" alt="">
+                <div
+                    class="size-10 md:size-20 rounded-[50%] px-1 md:px-3 ring-2 ring-fuchsia-800 relative -top-8 md:-top-16 left-10 md:left-20 bg-fuchsia-100">
+                    <img src="assets/img/Blog-1-icon.svg" class="size-10 md:size-20" alt=""></div>
+            </div>
+        </section>
+
+
+        <section class="px-10 md:px-20">
+            <div>
+                <h1 class="text-3xl md:text-5xl font-medium text-fuchsia-900 pb-2 md:pb-5">Understanding Tailwind CSS
+                    Basics</h1>
+                <h4 class="text-md md:text-2xl font-medium text-fuchsia-500">Learn the fundamentals of Tailwind CSS and
+                    how it speeds up your styling workflow.</h4>
+            </div>
+
+            <div>
+                <div class="w-full bg-fuchsia-900 h-0.5 mt-10"></div>
+                <div class="flex justify-between  text-slate-400 text-[11px] md:text-xl p-2">
+                    <p><span class="font-medium">Author:</span> Jane Doe</p>
+                    <p><span class="font-medium">Posted on:</span> 2025-09-01</p>
+                </div>
+                <div class="w-full bg-fuchsia-900 h-0.5 mش-10"></div>
+            </div>
+
+            <div class="mt-10">
+                <p>
+                    Tailwind CSS is a utility-first CSS framework that provides low-level styling building blocks. It
+                    allows developers to rapidly build custom designs without leaving their HTML...Tailwind CSS is a
+                    utility-first CSS framework that provides low-level styling building blocks. It allows developers to
+                    rapidly build custom designs without leaving their HTML...Tailwind CSS is a utility-first CSS
+                    framework that provides low-level styling building blocks. It allows developers to rapidly build
+                    custom designs without leaving their HTML...Tailwind CSS is a utility-first CSS framework that
+                    provides low-level styling building blocks. It allows developers to rapidly build custom designs
+                    without leaving their HTML...Tailwind CSS is a utility-first CSS framework that provides low-level
+                    styling building blocks. It allows developers to rapidly build custom designs without leaving their
+                    HTML...Tailwind CSS is a utility-first CSS framework that provides low-level styling building
+                    blocks. It allows developers to rapidly build custom designs without leaving their HTML..t CSS
+                    framework that provides low-level styling building blocks. It allows developers to rapidly build
+                    custom designs without leaving their HTML...Tailwind CSS is a utility-first CSS framework that
+                    provides low-level styling building blocks.
+                </p>
+                <br>
+
+                <p>
+                    It allows developers to rapidly build custom designs without leaving their HTML...Tailwind CSS is a
+                    utility-first CSS framework that provides low-level styling building blocks. It allows developers to
+                    rapidly build custom designs without leaving their HTML...Tailwind CSS is a utility-first CSS
+                    framework that pro..Tailwind CSS is a utility-first CSS framework that provides low-level styling
+                    building blocks. It allows developers to rapidly build custom designs without leaving their HTML...
+                </p>
+            </div>
+
+            <div class="text-fuchsia-700 flex gap-10 mt-10">
+                <a href="">Link</a>
+                <a href="">Link</a>
+                <a href="">Link</a>
+            </div>
+        </section>
+        `
+    
+    </script>
+</body>
+ </html>

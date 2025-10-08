@@ -6,39 +6,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tailwind-Blogs</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
     <!-- Nav of web pg -->
     <section>
-        <nav class="flex justify-between px-10 py-3 bg-fuchsia-900 text-fuchsia-50">
-            <div class="font-black">BLOG</div>
+        <nav class="md:flex justify-between px-10 py-3 bg-fuchsia-900 text-fuchsia-50">
+            <div class="flex justify-between">
+                <div class="font-black">DevSpace</div>
+                <div class="text-fuchsia-50 md:hidden">
+                    <button onclick="shownav()" id="btn"><i class="fa-solid fa-bars"></i></button>
+                </div>
+            </div>
             <div>
-                <ul class="flex gap-3">
-                    <li><a href="">Home</a></li>
-                    <li><a href="">Blog</a></li>
-                    <li><a href="">About</a></li>
-                    <li><a href="">Contact</a></li>
+                <ul id="nav-link" class="hidden md:flex gap-3">
+                    <li class="py-2 md:p-0 hover:bg-fuchsia-500"><a href="">Home</a></li>
+                    <li class="py-2 md:p-0 hover:bg-fuchsia-500"><a href="">Blog</a></li>
+                    <li class="py-2 md:p-0 hover:bg-fuchsia-500"><a href="">About</a></li>
+                    <li class="py-2 md:p-0 hover:bg-fuchsia-500"><a href="">Contact</a></li>
                 </ul>
             </div>
         </nav>
     </section>
-
-    <!-- Hero Seaction -->
-    <section class="bg-[url(/img/Hero-bg.jpg)] bg-cover bg-center">
-        <div class="bg-fuchsia-300/50 md:flex">
-            <div class="md:w-1/2 pl-5 lg:pl-60 pt-5 lg:pt-20">
-                <h1 class="text-2xl md:text-4xl text-fuchsia-900 font-bold">Welcome to Our Blog</h1>
-                <h4 class="md:text-2xl text-fuchsia-700 pt-3 font-medium">rends, Stories & Inspiration – All in One Place</h4>
-                <p class="font-light sm:text-sm md:text-md pt-3">From timeless jewelry trends to insider styling tips, our blog is where creativity meets elegance. Explore our posts to discover fresh ideas and inspiration curated just for you.</p>
-                <button class="bg-fuchsia-950 transition delay-150 duration-300 ease-in-out hover:rounded-lg hover:-translate-y-1  hover:scale-110 hover:bg-fuchsia-700 text-white px-3 py-2 my-5 rounded-full">Read Latest Article</button>
-            </div>
-            <div class="hidden md:block md:w-1/2">
-                <img src="img/hero-person.png" class="" alt="">
-            </div>
-        </div>
-
-    </section>
-</body>
-
+    </body>
 </html>
