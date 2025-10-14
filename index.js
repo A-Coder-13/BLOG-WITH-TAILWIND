@@ -17,7 +17,7 @@
                            <div class="p-3">
                             <div>
                                 <p class="text-sm">${blog[i].summary}</p>
-                                <button class="text-fuchsia-800 font-medium py-3 hover:text-blue-700">Read more</button>
+                                <a href="Blogdetail.html?title=${blog[i].title}&summary=${blog[i].summary}&author=${blog[i].author}" class="text-fuchsia-800 font-medium py-3 hover:text-blue-700">Read more</a>
                             </div>
                             <div class="w-full flex justify-between text-slate-400 text-[11px]">
                                 <p>Author: ${blog[i].author}</p>

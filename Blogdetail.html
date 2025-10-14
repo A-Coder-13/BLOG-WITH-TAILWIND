@@ -38,6 +38,15 @@
 
 
     <script>
+
+
+       const urlParams = new URLSearchParams(window.location.search);
+
+        let title = urlParams.get("title");
+        let summary = urlParams.get("summary");
+        let author = urlParams.get("author");
+        
+
         // Show-Nav
         function shownav() {
             const navLink = document.getElementById("nav-link");
@@ -72,16 +81,14 @@
 
         <section class="px-10 md:px-20">
             <div>
-                <h1 class="text-3xl md:text-5xl font-medium text-fuchsia-900 pb-2 md:pb-5">Understanding Tailwind CSS
-                    Basics</h1>
-                <h4 class="text-md md:text-2xl font-medium text-fuchsia-500">Learn the fundamentals of Tailwind CSS and
-                    how it speeds up your styling workflow.</h4>
+                <h1 class="text-3xl md:text-5xl font-medium text-fuchsia-900 pb-2 md:pb-5">${title}</h1>
+                <h4 class="text-md md:text-2xl font-medium text-fuchsia-500">${summary}</h4>
             </div>
 
             <div>
                 <div class="w-full bg-fuchsia-900 h-0.5 mt-10"></div>
                 <div class="flex justify-between  text-slate-400 text-[11px] md:text-xl p-2">
-                    <p><span class="font-medium">Author:</span> Jane Doe</p>
+                    <p><span class="font-medium">Author:</span> ${author}</p>
                     <p><span class="font-medium">Posted on:</span> 2025-09-01</p>
                 </div>
                 <div class="w-full bg-fuchsia-900 h-0.5 mش-10"></div>
