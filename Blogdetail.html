@@ -36,17 +36,9 @@
     <main id="main"></main>
 
 
+    <script src="assets/Json/Blog.js"></script>
 
     <script>
-
-
-       const urlParams = new URLSearchParams(window.location.search);
-
-        let title = urlParams.get("title");
-        let summary = urlParams.get("summary");
-        let author = urlParams.get("author");
-        
-
         // Show-Nav
         function shownav() {
             const navLink = document.getElementById("nav-link");
@@ -68,68 +60,67 @@
 
 
         let main = document.getElementById("main")
+
+         const urlParams = new URLSearchParams(window.location.search);
+
+        let id = urlParams.get("id");
+        console.log(id);
+    //     let summary = urlParams.get("summary");
+    //     let author = urlParams.get("author");
+
+    for(let i= 0; i<blog.length; i++){
+        if(id==blog[i].id){
+            console.log(blog[i].id)
         main.innerHTML = `
         <section>
             <div>
-                <img src="assets/img/Blog-1-thumbnail.jpg" class="w-full" alt="">
+                <img src="${blog[i].thumbnail}" class="w-full" alt="">
                 <div
                     class="size-10 md:size-20 rounded-[50%] px-1 md:px-3 ring-2 ring-fuchsia-800 relative -top-8 md:-top-16 left-10 md:left-20 bg-fuchsia-100">
-                    <img src="assets/img/Blog-1-icon.svg" class="size-10 md:size-20" alt=""></div>
+                    <img src="${blog[i].image}" class="size-10 md:size-20" alt=""></div>
             </div>
         </section>
 
 
         <section class="px-10 md:px-20">
             <div>
-                <h1 class="text-3xl md:text-5xl font-medium text-fuchsia-900 pb-2 md:pb-5">${title}</h1>
-                <h4 class="text-md md:text-2xl font-medium text-fuchsia-500">${summary}</h4>
+                <h1 class="text-3xl md:text-5xl font-medium text-fuchsia-900 pb-2 md:pb-5">${blog[i].title}</h1>
+                <h4 class="text-md md:text-2xl font-medium text-fuchsia-500">${blog[i].summary}</h4>
             </div>
 
             <div>
                 <div class="w-full bg-fuchsia-900 h-0.5 mt-10"></div>
                 <div class="flex justify-between  text-slate-400 text-[11px] md:text-xl p-2">
-                    <p><span class="font-medium">Author:</span> ${author}</p>
-                    <p><span class="font-medium">Posted on:</span> 2025-09-01</p>
+                    <p><span class="font-medium">Author:</span> ${blog[i].author}</p>
+                    <p><span class="font-medium">Posted on:</span> ${blog[i].date}</p>
                 </div>
-                <div class="w-full bg-fuchsia-900 h-0.5 mش-10"></div>
+                <div class="w-full bg-fuchsia-900 h-0.5 m-10"></div>
             </div>
 
             <div class="mt-10">
                 <p>
-                    Tailwind CSS is a utility-first CSS framework that provides low-level styling building blocks. It
-                    allows developers to rapidly build custom designs without leaving their HTML...Tailwind CSS is a
-                    utility-first CSS framework that provides low-level styling building blocks. It allows developers to
-                    rapidly build custom designs without leaving their HTML...Tailwind CSS is a utility-first CSS
-                    framework that provides low-level styling building blocks. It allows developers to rapidly build
-                    custom designs without leaving their HTML...Tailwind CSS is a utility-first CSS framework that
-                    provides low-level styling building blocks. It allows developers to rapidly build custom designs
-                    without leaving their HTML...Tailwind CSS is a utility-first CSS framework that provides low-level
-                    styling building blocks. It allows developers to rapidly build custom designs without leaving their
-                    HTML...Tailwind CSS is a utility-first CSS framework that provides low-level styling building
-                    blocks. It allows developers to rapidly build custom designs without leaving their HTML..t CSS
-                    framework that provides low-level styling building blocks. It allows developers to rapidly build
-                    custom designs without leaving their HTML...Tailwind CSS is a utility-first CSS framework that
-                    provides low-level styling building blocks.
+                    ${blog[i].content}
                 </p>
-                <br>
-
+                br
                 <p>
-                    It allows developers to rapidly build custom designs without leaving their HTML...Tailwind CSS is a
-                    utility-first CSS framework that provides low-level styling building blocks. It allows developers to
-                    rapidly build custom designs without leaving their HTML...Tailwind CSS is a utility-first CSS
-                    framework that pro..Tailwind CSS is a utility-first CSS framework that provides low-level styling
-                    building blocks. It allows developers to rapidly build custom designs without leaving their HTML...
+                    ${blog[i].content}
+                </p>
+                br
+                <p>
+                    ${blog[i].content}
                 </p>
             </div>
 
-            <div class="text-fuchsia-700 flex gap-10 mt-10">
-                <a href="">Link</a>
-                <a href="">Link</a>
-                <a href="">Link</a>
-            </div>
-        </section>
-        `
-    
+            <div class="text-fuchsia-700 flex gap-10 mt-10" id="title"> </div>
+            </section>`
+        
+             for(let j=0; j<blog[i].title.length; j++){
+                console.log[blog[i].title[j]]
+                document.getElementById("title").innerHTML=`<a href="">${blog[i].title[j]}</a>`
+            }  
+            }
+            
+    }
     </script>
 </body>
  </html>
